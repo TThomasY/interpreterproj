@@ -79,6 +79,20 @@ public class Scanner {
                 if (match('/')) {
                     // A comment goes until the end of the line
                     while (peek() != '\n' && !isAtEnd()) advance();
+                } else if (match('*')) {
+                    // Multiline comment goes until */ appears
+                    while(!isAtEnd()) {
+                        if (peek() == '\n') {
+                            line++;
+                        } else if (peek() == '*' && peekNext() == '/') {
+                            // Consume closing */
+                            advance();
+                            advance();
+                            break;
+                        } else {
+                            advance();
+                        }
+                    }
                 } else {
                     addToken(SLASH);
                 }
