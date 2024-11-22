@@ -13,7 +13,7 @@ public class GenerateAST {
         }
         String outputDir = args[0];
         defineAST(outputDir, "Expr", Arrays.asList(
-            "Binary : Expr left, Token Operator, Expr right",
+            "Binary : Expr left, Token operator, Expr right",
             "Grouping : Expr expression",
             "Literal : Object value",
             "Unary : Token operator, Expr right"

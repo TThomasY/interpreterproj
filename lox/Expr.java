@@ -11,9 +11,9 @@ abstract class Expr {
     }
 
     static class Binary extends Expr {
-        Binary(Expr left, Token Operator, Expr right) {
+        Binary(Expr left, Token operator, Expr right) {
             this.left = left;
-            this.Operator = Operator;
+            this.operator = operator;
             this.right = right;
         }
 
@@ -23,7 +23,7 @@ abstract class Expr {
         }
 
         final Expr left;
-        final Token Operator;
+        final Token operator;
         final Expr right;
     }
     static class Grouping extends Expr {
